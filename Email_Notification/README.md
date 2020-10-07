@@ -12,23 +12,20 @@ To use the application, users are required to sign up by providing email ID, use
 
 ## Screenshots
 
+![Admin dashboard](Screenshots/5%20Admin%20Dashboard.png)  
+<p align="center">Admin dashboard</p>
 
+&nbsp;
 
-### Admin dashboard
+![Email](Screenshots/6%20Email%20by%20Admin.png)  
+<p align="center">Email sent by admin</p>
 
-![Admin dashboard](https://raw.githubusercontent.com/manasdtrivedi/Image-Repository/main/Screenshot%20(162).png?token=AK6BH6QZMK2IEBTGSKROVSK7PW5HQ)
+&nbsp;
 
+![Database state](Screenshots/7%20MySQL%20Database%20State.png)  
+<p align="center">Database state at the time of sending email</p>
 
-
-### Email sent by admin
-
-![Email](https://raw.githubusercontent.com/manasdtrivedi/Image-Repository/main/Screenshot%20(164).png?token=AK6BH6WJ452BARYKXE2GCX27PW5RQ)
-
-
-### Database state at time of sending email
-
-![MySQL Table](https://raw.githubusercontent.com/manasdtrivedi/Image-Repository/main/Untitled.png?token=AK6BH6QTF2D3IYDY5F2OG3C7PW5YO)
-
+&nbsp;
 
 ## Task list
 - [x] Send emails to all registered users
