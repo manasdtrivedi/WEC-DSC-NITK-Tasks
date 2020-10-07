@@ -68,6 +68,10 @@ public class NITK_Virtual_Guide extends javax.swing.JFrame {
         menuGoButton = new javax.swing.JButton();
         jButton7 = new javax.swing.JButton();
         mapFrame = new javax.swing.JFrame();
+        jScrollPane5 = new javax.swing.JScrollPane();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        mapBackButton = new javax.swing.JButton();
         newsDetailsFrame = new javax.swing.JFrame();
         newsTitleLabel = new javax.swing.JLabel();
         newsDateLabel = new javax.swing.JLabel();
@@ -88,6 +92,7 @@ public class NITK_Virtual_Guide extends javax.swing.JFrame {
         jButton4 = new javax.swing.JButton();
 
         newsFrame.setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        newsFrame.setTitle("NITK News");
         newsFrame.setMinimumSize(new java.awt.Dimension(1837, 1055));
         newsFrame.setPreferredSize(new java.awt.Dimension(1837, 1055));
         newsFrame.addWindowListener(new java.awt.event.WindowAdapter() {
@@ -155,6 +160,7 @@ public class NITK_Virtual_Guide extends javax.swing.JFrame {
         );
 
         eventsFrame.setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        eventsFrame.setTitle("NITK Events");
         eventsFrame.setMinimumSize(new java.awt.Dimension(1837, 1055));
         eventsFrame.setPreferredSize(new java.awt.Dimension(1837, 1055));
         eventsFrame.addWindowListener(new java.awt.event.WindowAdapter() {
@@ -221,6 +227,7 @@ public class NITK_Virtual_Guide extends javax.swing.JFrame {
         );
 
         menuFrame.setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        menuFrame.setTitle("Mess Menu");
         menuFrame.setMinimumSize(new java.awt.Dimension(1837, 1055));
         menuFrame.setPreferredSize(new java.awt.Dimension(1837, 1055));
         menuFrame.addWindowListener(new java.awt.event.WindowAdapter() {
@@ -235,6 +242,7 @@ public class NITK_Virtual_Guide extends javax.swing.JFrame {
         jLabel5.setFont(new java.awt.Font("Calibri", 0, 36)); // NOI18N
         jLabel5.setText("Select hostel:");
 
+        hostelBox.setFont(new java.awt.Font("Calibri", 0, 36)); // NOI18N
         hostelBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         dayNameLabel.setFont(new java.awt.Font("Calibri", 0, 36)); // NOI18N
@@ -351,21 +359,56 @@ public class NITK_Virtual_Guide extends javax.swing.JFrame {
         );
 
         mapFrame.setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        mapFrame.setTitle("NITK Map");
         mapFrame.setMinimumSize(new java.awt.Dimension(1837, 1055));
         mapFrame.setPreferredSize(new java.awt.Dimension(1837, 1055));
+
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/nitk_map-1.png"))); // NOI18N
+        jScrollPane5.setViewportView(jLabel6);
+
+        jLabel7.setFont(new java.awt.Font("Calibri", 0, 48)); // NOI18N
+        jLabel7.setText("NITK Map");
+
+        mapBackButton.setFont(new java.awt.Font("Calibri", 0, 24)); // NOI18N
+        mapBackButton.setText("Back");
+        mapBackButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mapBackButtonActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout mapFrameLayout = new javax.swing.GroupLayout(mapFrame.getContentPane());
         mapFrame.getContentPane().setLayout(mapFrameLayout);
         mapFrameLayout.setHorizontalGroup(
             mapFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(mapFrameLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(mapBackButton, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(714, 714, 714)
+                .addComponent(jLabel7)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, mapFrameLayout.createSequentialGroup()
+                .addContainerGap(105, Short.MAX_VALUE)
+                .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 1630, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(102, 102, 102))
         );
         mapFrameLayout.setVerticalGroup(
             mapFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(mapFrameLayout.createSequentialGroup()
+                .addGroup(mapFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(mapFrameLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(mapBackButton, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(mapFrameLayout.createSequentialGroup()
+                        .addGap(45, 45, 45)
+                        .addComponent(jLabel7)))
+                .addGap(41, 41, 41)
+                .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 792, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(298, Short.MAX_VALUE))
         );
 
         newsDetailsFrame.setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        newsDetailsFrame.setTitle("News Details");
         newsDetailsFrame.setMinimumSize(new java.awt.Dimension(1837, 1055));
         newsDetailsFrame.setPreferredSize(new java.awt.Dimension(1837, 1055));
         newsDetailsFrame.addWindowListener(new java.awt.event.WindowAdapter() {
@@ -428,6 +471,7 @@ public class NITK_Virtual_Guide extends javax.swing.JFrame {
         );
 
         eventDetailsFrame.setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        eventDetailsFrame.setTitle("Event Details");
         eventDetailsFrame.setMinimumSize(new java.awt.Dimension(1837, 1055));
         eventDetailsFrame.setPreferredSize(new java.awt.Dimension(1837, 1055));
         eventDetailsFrame.addWindowListener(new java.awt.event.WindowAdapter() {
@@ -497,8 +541,8 @@ public class NITK_Virtual_Guide extends javax.swing.JFrame {
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("NITK Virtual Guide");
         setMinimumSize(new java.awt.Dimension(1837, 1055));
-        setPreferredSize(new java.awt.Dimension(1837, 1055));
 
         jLabel2.setFont(new java.awt.Font("Calibri", 0, 60)); // NOI18N
         jLabel2.setText("NITK Virtual Guide");
@@ -649,7 +693,7 @@ public class NITK_Virtual_Guide extends javax.swing.JFrame {
 
     private void eventsFrameWindowActivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_eventsFrameWindowActivated
         JTableHeader tableHeader = eventsTable.getTableHeader();
-        Font headerFont = new Font("Calibri", Font.PLAIN, 24);
+        Font headerFont = new Font("Calibri", Font.PLAIN, 36);
         tableHeader.setFont(headerFont);
         eventsTM = (DefaultTableModel)eventsTable.getModel();
         eventsTM.setRowCount(0);
@@ -747,12 +791,12 @@ public class NITK_Virtual_Guide extends javax.swing.JFrame {
             sql = "SELECT Item FROM Menu WHERE Hostel = '" + hostelName + "' AND Day = DAYNAME(curdate()) AND Meal = 'Lunch';";
             rs = stmt.executeQuery(sql);
             while(rs.next()){
-                breakfastTM.addRow(new Object [] {rs.getString("Item")});
+                lunchTM.addRow(new Object [] {rs.getString("Item")});
             }
             sql = "SELECT Item FROM Menu WHERE Hostel = '" + hostelName + "' AND Day = DAYNAME(curdate()) AND Meal = 'Dinner';";
             rs = stmt.executeQuery(sql);
             while(rs.next()){
-                breakfastTM.addRow(new Object [] {rs.getString("Item")});
+                dinnerTM.addRow(new Object [] {rs.getString("Item")});
             }
             rs.close();
             stmt.close();
@@ -787,6 +831,11 @@ public class NITK_Virtual_Guide extends javax.swing.JFrame {
         eventDetailsFrame.dispose();
         eventsFrame.setVisible(true);
     }//GEN-LAST:event_jButton9ActionPerformed
+
+    private void mapBackButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mapBackButtonActionPerformed
+        mapFrame.dispose();
+        this.setVisible(true);
+    }//GEN-LAST:event_mapBackButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -849,14 +898,18 @@ public class NITK_Virtual_Guide extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
+    private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JScrollPane jScrollPane7;
     private javax.swing.JScrollPane jScrollPane8;
     private javax.swing.JTable lunchTable;
+    private javax.swing.JButton mapBackButton;
     private javax.swing.JFrame mapFrame;
     private javax.swing.JFrame menuFrame;
     private javax.swing.JButton menuGoButton;
