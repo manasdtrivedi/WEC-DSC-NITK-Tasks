@@ -22,6 +22,41 @@ In the Map module, the user can view a scrollable 2D map of NITK.
 
 ## Screenshots
 
+![Start Frame](Screenshots/1%20Start%20Frame.png)  
+<p align="center">Start Frame</p>
+
+&nbsp;
+
+![Mess Menu Frame](Screenshots/6%20Mess%20Menu%20Frame.png)  
+<p align="center">Mess Menu Frame</p>
+
+&nbsp;
+
+![News Frame](Screenshots/2%20News%20Frame.png)  
+<p align="center">News Frame</p>
+
+&nbsp;
+
+![News Details Frame](Screenshots/3%20News%20Details%20Frame.png)  
+<p align="center">News Details Frame</p>
+
+&nbsp;
+
+![Events Frame](Screenshots/4%20Events%20Frame.png)  
+<p align="center">Events Frame</p>
+
+&nbsp;
+
+![Event Details Frame](Screenshots/5%20Event%20Details%20Frame.png)  
+<p align="center">Event Details Frame</p>
+
+&nbsp;
+
+![Map Frame](Screenshots/7%20Map%20Frame.png)  
+<p align="center">Map Frame</p>
+
+&nbsp;
+
 ## Task list
 - [x] Values loaded dynamically from MySQL database
 - [x] User can view news, sorted by most recent
