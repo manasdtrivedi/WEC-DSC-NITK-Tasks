@@ -50,16 +50,21 @@ public class Email_Notification extends javax.swing.JFrame {
         passwordField1 = new javax.swing.JPasswordField();
         countryBox = new javax.swing.JComboBox<>();
         createAccountButton = new javax.swing.JButton();
+        signUpBackButton = new javax.swing.JButton();
+        jLabel13 = new javax.swing.JLabel();
         loginFrame = new javax.swing.JFrame();
         jLabel6 = new javax.swing.JLabel();
         userIDTextField2 = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
         passwordField2 = new javax.swing.JPasswordField();
         enterButton = new javax.swing.JButton();
+        jLabel12 = new javax.swing.JLabel();
+        loginBackButton = new javax.swing.JButton();
         dashboard = new javax.swing.JFrame();
         jLabel8 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
+        dashboardBackButton = new javax.swing.JButton();
         adminDashboard = new javax.swing.JFrame();
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
@@ -72,24 +77,44 @@ public class Email_Notification extends javax.swing.JFrame {
         sendEmailsButton = new javax.swing.JButton();
         jScrollPane3 = new javax.swing.JScrollPane();
         countryListBox = new javax.swing.JList<>();
+        adminDashboardBackButton = new javax.swing.JButton();
         buttonGroup1 = new javax.swing.ButtonGroup();
         jLabel1 = new javax.swing.JLabel();
         signUpButton = new javax.swing.JButton();
         loginButton = new javax.swing.JButton();
 
         signUpFrame.setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        signUpFrame.setMinimumSize(new java.awt.Dimension(400, 300));
+        signUpFrame.setTitle("Sign Up");
+        signUpFrame.setMinimumSize(new java.awt.Dimension(1930, 1040));
+        signUpFrame.setPreferredSize(new java.awt.Dimension(1930, 1040));
+        signUpFrame.addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowActivated(java.awt.event.WindowEvent evt) {
+                signUpFrameWindowActivated(evt);
+            }
+        });
 
+        jLabel2.setFont(new java.awt.Font("Calibri", 0, 36)); // NOI18N
         jLabel2.setText("Enter your email:");
 
+        jLabel3.setFont(new java.awt.Font("Calibri", 0, 36)); // NOI18N
         jLabel3.setText("Enter user ID:");
 
+        jLabel4.setFont(new java.awt.Font("Calibri", 0, 36)); // NOI18N
         jLabel4.setText("Enter password:");
 
+        jLabel5.setFont(new java.awt.Font("Calibri", 0, 36)); // NOI18N
         jLabel5.setText("Select country:");
 
+        userIDTextField1.setFont(new java.awt.Font("Calibri", 0, 36)); // NOI18N
+
+        emailTextField.setFont(new java.awt.Font("Calibri", 0, 36)); // NOI18N
+
+        passwordField1.setFont(new java.awt.Font("Calibri", 0, 36)); // NOI18N
+
+        countryBox.setFont(new java.awt.Font("Calibri", 0, 36)); // NOI18N
         countryBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "--Select--", "Afghanistan", "Albania", "Algeria", "Andorra", "Angola", "Antigua & Deps", "Argentina", "Armenia", "Australia", "Austria", "Azerbaijan", "Bahamas", "Bahrain", "Bangladesh", "Barbados", "Belarus", "Belgium", "Belize", "Benin", "Bhutan", "Bolivia", "Bosnia Herzegovina", "Botswana", "Brazil", "Brunei", "Bulgaria", "Burkina", "Burundi", "Cambodia", "Cameroon", "Canada", "Cape Verde", "Central African Rep", "Chad", "Chile", "China", "Colombia", "Comoros", "Congo", "Congo {Democratic Rep}", "Costa Rica", "Croatia", "Cuba", "Cyprus", "Czech Republic", "Denmark", "Djibouti", "Dominica", "Dominican Republic", "East Timor", "Ecuador", "Egypt", "El Salvador", "Equatorial Guinea", "Eritrea", "Estonia", "Ethiopia", "Fiji", "Finland", "France", "Gabon", "Gambia", "Georgia", "Germany", "Ghana", "Greece", "Grenada", "Guatemala", "Guinea", "Guinea-Bissau", "Guyana", "Haiti", "Honduras", "Hungary", "Iceland", "India", "Indonesia", "Iran", "Iraq", "Ireland {Republic}", "Israel", "Italy", "Ivory Coast", "Jamaica", "Japan", "Jordan", "Kazakhstan", "Kenya", "Kiribati", "Korea North", "Korea South", "Kosovo", "Kuwait", "Kyrgyzstan", "Laos", "Latvia", "Lebanon", "Lesotho", "Liberia", "Libya", "Liechtenstein", "Lithuania", "Luxembourg", "Macedonia", "Madagascar", "Malawi", "Malaysia", "Maldives", "Mali", "Malta", "Marshall Islands", "Mauritania", "Mauritius", "Mexico", "Micronesia", "Moldova", "Monaco", "Mongolia", "Montenegro", "Morocco", "Mozambique", "Myanmar, {Burma}", "Namibia", "Nauru", "Nepal", "Netherlands", "New Zealand", "Nicaragua", "Niger", "Nigeria", "Norway", "Oman", "Pakistan", "Palau", "Panama", "Papua New Guinea", "Paraguay", "Peru", "Philippines", "Poland", "Portugal", "Qatar", "Romania", "Russian Federation", "Rwanda", "St Kitts & Nevis", "St Lucia", "Saint Vincent & the Grenadines", "Samoa", "San Marino", "Sao Tome & Principe", "Saudi Arabia", "Senegal", "Serbia", "Seychelles", "Sierra Leone", "Singapore", "Slovakia", "Slovenia", "Solomon Islands", "Somalia", "South Africa", "South Sudan", "Spain", "Sri Lanka", "Sudan", "Suriname", "Swaziland", "Sweden", "Switzerland", "Syria", "Taiwan", "Tajikistan", "Tanzania", "Thailand", "Togo", "Tonga", "Trinidad & Tobago", "Tunisia", "Turkey", "Turkmenistan", "Tuvalu", "Uganda", "Ukraine", "United Arab Emirates", "United Kingdom", "United States", "Uruguay", "Uzbekistan", "Vanuatu", "Vatican City", "Venezuela", "Vietnam", "Yemen", "Zambia", "Zimbabwe" }));
 
+        createAccountButton.setFont(new java.awt.Font("Calibri", 0, 36)); // NOI18N
         createAccountButton.setText("Create Account");
         createAccountButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -97,65 +122,114 @@ public class Email_Notification extends javax.swing.JFrame {
             }
         });
 
+        signUpBackButton.setFont(new java.awt.Font("Calibri", 0, 36)); // NOI18N
+        signUpBackButton.setText("Back");
+        signUpBackButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                signUpBackButtonActionPerformed(evt);
+            }
+        });
+
+        jLabel13.setFont(new java.awt.Font("Calibri", 0, 48)); // NOI18N
+        jLabel13.setText("Sign Up");
+
         javax.swing.GroupLayout signUpFrameLayout = new javax.swing.GroupLayout(signUpFrame.getContentPane());
         signUpFrame.getContentPane().setLayout(signUpFrameLayout);
         signUpFrameLayout.setHorizontalGroup(
             signUpFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(signUpFrameLayout.createSequentialGroup()
+                .addContainerGap(839, Short.MAX_VALUE)
+                .addComponent(createAccountButton)
+                .addGap(834, 834, 834))
+            .addGroup(signUpFrameLayout.createSequentialGroup()
                 .addGroup(signUpFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(signUpFrameLayout.createSequentialGroup()
                         .addContainerGap()
+                        .addComponent(signUpBackButton, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(772, 772, 772)
+                        .addComponent(jLabel13))
+                    .addGroup(signUpFrameLayout.createSequentialGroup()
+                        .addGap(411, 411, 411)
                         .addGroup(signUpFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jLabel5)
                             .addComponent(jLabel4)
                             .addComponent(jLabel2)
                             .addComponent(jLabel3))
-                        .addGap(18, 18, 18)
-                        .addGroup(signUpFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(userIDTextField1)
-                            .addComponent(emailTextField)
-                            .addComponent(passwordField1)
-                            .addComponent(countryBox, 0, 202, Short.MAX_VALUE)))
-                    .addGroup(signUpFrameLayout.createSequentialGroup()
-                        .addGap(138, 138, 138)
-                        .addComponent(createAccountButton)))
-                .addContainerGap(69, Short.MAX_VALUE))
+                        .addGap(36, 36, 36)
+                        .addGroup(signUpFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(passwordField1, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(emailTextField, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(userIDTextField1, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(countryBox, 0, 861, Short.MAX_VALUE))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         signUpFrameLayout.setVerticalGroup(
             signUpFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(signUpFrameLayout.createSequentialGroup()
-                .addGap(44, 44, 44)
+                .addGroup(signUpFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(signUpFrameLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(signUpBackButton, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(signUpFrameLayout.createSequentialGroup()
+                        .addGap(64, 64, 64)
+                        .addComponent(jLabel13)))
+                .addGap(124, 124, 124)
                 .addGroup(signUpFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
                     .addComponent(userIDTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                .addGap(73, 73, 73)
                 .addGroup(signUpFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
                     .addComponent(emailTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                .addGap(66, 66, 66)
                 .addGroup(signUpFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
                     .addComponent(passwordField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                .addGap(75, 75, 75)
                 .addGroup(signUpFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
                     .addComponent(countryBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 51, Short.MAX_VALUE)
+                .addGap(149, 149, 149)
                 .addComponent(createAccountButton)
-                .addGap(38, 38, 38))
+                .addContainerGap(176, Short.MAX_VALUE))
         );
 
         loginFrame.setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        loginFrame.setMinimumSize(new java.awt.Dimension(400, 300));
+        loginFrame.setTitle("Login");
+        loginFrame.setMinimumSize(new java.awt.Dimension(1930, 1040));
+        loginFrame.setPreferredSize(new java.awt.Dimension(1930, 1040));
+        loginFrame.addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowActivated(java.awt.event.WindowEvent evt) {
+                loginFrameWindowActivated(evt);
+            }
+        });
 
+        jLabel6.setFont(new java.awt.Font("Calibri", 0, 36)); // NOI18N
         jLabel6.setText("Enter user ID:");
 
+        userIDTextField2.setFont(new java.awt.Font("Calibri", 0, 36)); // NOI18N
+
+        jLabel7.setFont(new java.awt.Font("Calibri", 0, 36)); // NOI18N
         jLabel7.setText("Enter password:");
 
+        passwordField2.setFont(new java.awt.Font("Calibri", 0, 36)); // NOI18N
+
+        enterButton.setFont(new java.awt.Font("Calibri", 0, 36)); // NOI18N
         enterButton.setText("Enter the application");
         enterButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 enterButtonActionPerformed(evt);
+            }
+        });
+
+        jLabel12.setFont(new java.awt.Font("Calibri", 0, 48)); // NOI18N
+        jLabel12.setText("Login");
+
+        loginBackButton.setFont(new java.awt.Font("Calibri", 0, 36)); // NOI18N
+        loginBackButton.setText("Back");
+        loginBackButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                loginBackButtonActionPerformed(evt);
             }
         });
 
@@ -164,98 +238,155 @@ public class Email_Notification extends javax.swing.JFrame {
         loginFrameLayout.setHorizontalGroup(
             loginFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(loginFrameLayout.createSequentialGroup()
-                .addGap(84, 84, 84)
-                .addGroup(loginFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel7)
-                    .addComponent(jLabel6))
-                .addGap(18, 18, 18)
-                .addGroup(loginFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(userIDTextField2)
-                    .addComponent(passwordField2, javax.swing.GroupLayout.DEFAULT_SIZE, 140, Short.MAX_VALUE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, loginFrameLayout.createSequentialGroup()
-                .addContainerGap(137, Short.MAX_VALUE)
-                .addComponent(enterButton)
-                .addGap(114, 114, 114))
+                .addContainerGap()
+                .addGroup(loginFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(loginFrameLayout.createSequentialGroup()
+                        .addGap(0, 590, Short.MAX_VALUE)
+                        .addGroup(loginFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, loginFrameLayout.createSequentialGroup()
+                                .addComponent(jLabel12)
+                                .addGap(903, 903, 903))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, loginFrameLayout.createSequentialGroup()
+                                .addGroup(loginFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, loginFrameLayout.createSequentialGroup()
+                                        .addComponent(enterButton)
+                                        .addGap(215, 215, 215))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, loginFrameLayout.createSequentialGroup()
+                                        .addGroup(loginFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                            .addComponent(jLabel7)
+                                            .addComponent(jLabel6))
+                                        .addGap(18, 18, 18)
+                                        .addGroup(loginFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                            .addComponent(userIDTextField2)
+                                            .addComponent(passwordField2, javax.swing.GroupLayout.PREFERRED_SIZE, 521, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addGap(550, 550, 550))))
+                    .addGroup(loginFrameLayout.createSequentialGroup()
+                        .addComponent(loginBackButton, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))))
         );
         loginFrameLayout.setVerticalGroup(
             loginFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(loginFrameLayout.createSequentialGroup()
-                .addGap(39, 39, 39)
+                .addContainerGap()
+                .addComponent(loginBackButton, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(63, 63, 63)
+                .addComponent(jLabel12)
+                .addGap(162, 162, 162)
                 .addGroup(loginFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel6)
                     .addComponent(userIDTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                .addGap(69, 69, 69)
                 .addGroup(loginFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel7)
                     .addComponent(passwordField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(80, 80, 80)
+                .addGap(152, 152, 152)
                 .addComponent(enterButton)
-                .addContainerGap(94, Short.MAX_VALUE))
+                .addContainerGap(290, Short.MAX_VALUE))
         );
 
         dashboard.setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        dashboard.setMinimumSize(new java.awt.Dimension(400, 300));
+        dashboard.setTitle("Dashboard");
+        dashboard.setMinimumSize(new java.awt.Dimension(1930, 1040));
+        dashboard.setPreferredSize(new java.awt.Dimension(1930, 1040));
 
+        jLabel8.setFont(new java.awt.Font("Calibri", 0, 48)); // NOI18N
         jLabel8.setText("Dashboard");
 
         jTextArea1.setEditable(false);
         jTextArea1.setColumns(20);
+        jTextArea1.setFont(new java.awt.Font("Calibri", 0, 36)); // NOI18N
         jTextArea1.setLineWrap(true);
         jTextArea1.setRows(5);
         jTextArea1.setText("Hi! The admin will be sending you an email in the near future (hopefully). Keep checking your inbox!\n");
         jTextArea1.setWrapStyleWord(true);
         jScrollPane1.setViewportView(jTextArea1);
 
+        dashboardBackButton.setFont(new java.awt.Font("Calibri", 0, 36)); // NOI18N
+        dashboardBackButton.setText("Back");
+        dashboardBackButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                dashboardBackButtonActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout dashboardLayout = new javax.swing.GroupLayout(dashboard.getContentPane());
         dashboard.getContentPane().setLayout(dashboardLayout);
         dashboardLayout.setHorizontalGroup(
             dashboardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(dashboardLayout.createSequentialGroup()
-                .addGap(170, 170, 170)
-                .addComponent(jLabel8)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, dashboardLayout.createSequentialGroup()
-                .addContainerGap(91, Short.MAX_VALUE)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 235, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(74, 74, 74))
+                .addContainerGap()
+                .addGroup(dashboardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(dashboardLayout.createSequentialGroup()
+                        .addGap(0, 532, Short.MAX_VALUE)
+                        .addGroup(dashboardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, dashboardLayout.createSequentialGroup()
+                                .addComponent(jLabel8)
+                                .addGap(840, 840, 840))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, dashboardLayout.createSequentialGroup()
+                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 907, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(479, 479, 479))))
+                    .addGroup(dashboardLayout.createSequentialGroup()
+                        .addComponent(dashboardBackButton, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))))
         );
         dashboardLayout.setVerticalGroup(
             dashboardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(dashboardLayout.createSequentialGroup()
                 .addContainerGap()
+                .addComponent(dashboardBackButton, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(86, 86, 86)
                 .addComponent(jLabel8)
-                .addGap(41, 41, 41)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(75, Short.MAX_VALUE))
+                .addGap(76, 76, 76)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 418, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(305, Short.MAX_VALUE))
         );
 
         adminDashboard.setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        adminDashboard.setMinimumSize(new java.awt.Dimension(400, 300));
+        adminDashboard.setTitle("Admin Dashboard");
+        adminDashboard.setMinimumSize(new java.awt.Dimension(1930, 1040));
+        adminDashboard.setPreferredSize(new java.awt.Dimension(1930, 1040));
+        adminDashboard.addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowClosed(java.awt.event.WindowEvent evt) {
+                adminDashboardWindowClosed(evt);
+            }
+            public void windowOpened(java.awt.event.WindowEvent evt) {
+                adminDashboardWindowOpened(evt);
+            }
+        });
 
+        jLabel9.setFont(new java.awt.Font("Calibri", 0, 48)); // NOI18N
         jLabel9.setText("Admin Dashboard");
 
+        jLabel10.setFont(new java.awt.Font("Calibri", 0, 32)); // NOI18N
         jLabel10.setText("Subject line:");
 
+        subjectTextField.setFont(new java.awt.Font("Calibri", 0, 32)); // NOI18N
+
+        jLabel11.setFont(new java.awt.Font("Calibri", 0, 32)); // NOI18N
         jLabel11.setText("Body:");
 
         bodyTextArea.setColumns(20);
+        bodyTextArea.setFont(new java.awt.Font("Calibri", 0, 32)); // NOI18N
         bodyTextArea.setRows(5);
         jScrollPane2.setViewportView(bodyTextArea);
 
         buttonGroup1.add(allUsersRadioButton);
+        allUsersRadioButton.setFont(new java.awt.Font("Calibri", 0, 32)); // NOI18N
         allUsersRadioButton.setText("Send to all users");
 
         buttonGroup1.add(filtersRadioButton);
-        filtersRadioButton.setText("Apply filters");
+        filtersRadioButton.setFont(new java.awt.Font("Calibri", 0, 32)); // NOI18N
+        filtersRadioButton.setText("Send to users of selected countries");
 
-        sendEmailsButton.setText("Send");
+        sendEmailsButton.setFont(new java.awt.Font("Calibri", 0, 36)); // NOI18N
+        sendEmailsButton.setText("Send email(s)");
         sendEmailsButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 sendEmailsButtonActionPerformed(evt);
             }
         });
 
+        countryListBox.setFont(new java.awt.Font("Calibri", 0, 32)); // NOI18N
         countryListBox.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Afghanistan", "Albania", "Algeria", "Andorra", "Angola", "Antigua & Deps", "Argentina", "Armenia", "Australia", "Austria", "Azerbaijan", "Bahamas", "Bahrain", "Bangladesh", "Barbados", "Belarus", "Belgium", "Belize", "Benin", "Bhutan", "Bolivia", "Bosnia Herzegovina", "Botswana", "Brazil", "Brunei", "Bulgaria", "Burkina", "Burundi", "Cambodia", "Cameroon", "Canada", "Cape Verde", "Central African Rep", "Chad", "Chile", "China", "Colombia", "Comoros", "Congo", "Congo {Democratic Rep}", "Costa Rica", "Croatia", "Cuba", "Cyprus", "Czech Republic", "Denmark", "Djibouti", "Dominica", "Dominican Republic", "East Timor", "Ecuador", "Egypt", "El Salvador", "Equatorial Guinea", "Eritrea", "Estonia", "Ethiopia", "Fiji", "Finland", "France", "Gabon", "Gambia", "Georgia", "Germany", "Ghana", "Greece", "Grenada", "Guatemala", "Guinea", "Guinea-Bissau", "Guyana", "Haiti", "Honduras", "Hungary", "Iceland", "India", "Indonesia", "Iran", "Iraq", "Ireland {Republic}", "Israel", "Italy", "Ivory Coast", "Jamaica", "Japan", "Jordan", "Kazakhstan", "Kenya", "Kiribati", "Korea North", "Korea South", "Kosovo", "Kuwait", "Kyrgyzstan", "Laos", "Latvia", "Lebanon", "Lesotho", "Liberia", "Libya", "Liechtenstein", "Lithuania", "Luxembourg", "Macedonia", "Madagascar", "Malawi", "Malaysia", "Maldives", "Mali", "Malta", "Marshall Islands", "Mauritania", "Mauritius", "Mexico", "Micronesia", "Moldova", "Monaco", "Mongolia", "Montenegro", "Morocco", "Mozambique", "Myanmar, {Burma}", "Namibia", "Nauru", "Nepal", "Netherlands", "New Zealand", "Nicaragua", "Niger", "Nigeria", "Norway", "Oman", "Pakistan", "Palau", "Panama", "Papua New Guinea", "Paraguay", "Peru", "Philippines", "Poland", "Portugal", "Qatar", "Romania", "Russian Federation", "Rwanda", "St Kitts & Nevis", "St Lucia", "Saint Vincent & the Grenadines", "Samoa", "San Marino", "Sao Tome & Principe", "Saudi Arabia", "Senegal", "Serbia", "Seychelles", "Sierra Leone", "Singapore", "Slovakia", "Slovenia", "Solomon Islands", "Somalia", "South Africa", "South Sudan", "Spain", "Sri Lanka", "Sudan", "Suriname", "Swaziland", "Sweden", "Switzerland", "Syria", "Taiwan", "Tajikistan", "Tanzania", "Thailand", "Togo", "Tonga", "Trinidad & Tobago", "Tunisia", "Turkey", "Turkmenistan", "Tuvalu", "Uganda", "Ukraine", "United Arab Emirates", "United Kingdom", "United States", "Uruguay", "Uzbekistan", "Vanuatu", "Vatican City", "Venezuela", "Vietnam", "Yemen", "Zambia", "Zimbabwe" };
             public int getSize() { return strings.length; }
@@ -263,75 +394,93 @@ public class Email_Notification extends javax.swing.JFrame {
         });
         jScrollPane3.setViewportView(countryListBox);
 
+        adminDashboardBackButton.setFont(new java.awt.Font("Tahoma", 0, 28)); // NOI18N
+        adminDashboardBackButton.setText("Back");
+        adminDashboardBackButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                adminDashboardBackButtonActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout adminDashboardLayout = new javax.swing.GroupLayout(adminDashboard.getContentPane());
         adminDashboard.getContentPane().setLayout(adminDashboardLayout);
         adminDashboardLayout.setHorizontalGroup(
             adminDashboardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(adminDashboardLayout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(adminDashboardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(adminDashboardLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(adminDashboardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jScrollPane2)
-                            .addGroup(adminDashboardLayout.createSequentialGroup()
-                                .addGroup(adminDashboardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addGroup(adminDashboardLayout.createSequentialGroup()
-                                        .addComponent(allUsersRadioButton)
-                                        .addGap(30, 30, 30)
-                                        .addComponent(filtersRadioButton))
-                                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(81, 81, 81)
-                                .addComponent(sendEmailsButton)
-                                .addGap(0, 70, Short.MAX_VALUE))))
+                    .addComponent(jLabel11)
                     .addGroup(adminDashboardLayout.createSequentialGroup()
                         .addGroup(adminDashboardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel10)
+                            .addComponent(adminDashboardBackButton, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(adminDashboardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(adminDashboardLayout.createSequentialGroup()
-                                .addContainerGap()
-                                .addComponent(jLabel10)
+                                .addGap(557, 557, 557)
+                                .addComponent(jLabel9)
+                                .addGap(0, 0, Short.MAX_VALUE))
+                            .addGroup(adminDashboardLayout.createSequentialGroup()
                                 .addGap(18, 18, 18)
-                                .addComponent(subjectTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 224, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(adminDashboardLayout.createSequentialGroup()
-                                .addContainerGap()
-                                .addComponent(jLabel11)))
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                                .addComponent(subjectTextField))))
+                    .addComponent(jScrollPane2))
                 .addContainerGap())
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, adminDashboardLayout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jLabel9)
-                .addGap(185, 185, 185))
+            .addGroup(adminDashboardLayout.createSequentialGroup()
+                .addGap(150, 150, 150)
+                .addGroup(adminDashboardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(filtersRadioButton)
+                    .addComponent(allUsersRadioButton))
+                .addGap(77, 77, 77)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(253, 253, 253)
+                .addComponent(sendEmailsButton, javax.swing.GroupLayout.PREFERRED_SIZE, 295, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 235, Short.MAX_VALUE))
         );
         adminDashboardLayout.setVerticalGroup(
             adminDashboardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(adminDashboardLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel9)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(adminDashboardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(adminDashboardLayout.createSequentialGroup()
+                        .addGap(30, 30, 30)
+                        .addComponent(jLabel9))
+                    .addGroup(adminDashboardLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(adminDashboardBackButton, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(37, 37, 37)
                 .addGroup(adminDashboardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel10)
                     .addComponent(subjectTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                .addGap(35, 35, 35)
                 .addComponent(jLabel11)
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(adminDashboardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(allUsersRadioButton)
-                    .addComponent(filtersRadioButton))
                 .addGroup(adminDashboardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(adminDashboardLayout.createSequentialGroup()
-                        .addGap(29, 29, 29)
-                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 42, Short.MAX_VALUE))
+                        .addGap(18, 18, 18)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 341, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(adminDashboardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(adminDashboardLayout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 47, Short.MAX_VALUE)
+                                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(48, 48, 48))
+                            .addGroup(adminDashboardLayout.createSequentialGroup()
+                                .addGap(158, 158, 158)
+                                .addComponent(sendEmailsButton, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, adminDashboardLayout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(sendEmailsButton)
-                        .addGap(91, 91, 91))))
+                        .addComponent(allUsersRadioButton)
+                        .addGap(36, 36, 36)
+                        .addComponent(filtersRadioButton)
+                        .addGap(172, 172, 172))))
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Email Notification Testing Portal");
+        setMinimumSize(new java.awt.Dimension(1930, 1040));
+        setPreferredSize(new java.awt.Dimension(1930, 1040));
 
+        jLabel1.setFont(new java.awt.Font("Calibri", 0, 48)); // NOI18N
         jLabel1.setText("Email Notification Testing Portal");
 
+        signUpButton.setFont(new java.awt.Font("Calibri", 0, 36)); // NOI18N
         signUpButton.setText("Sign Up");
         signUpButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -339,6 +488,7 @@ public class Email_Notification extends javax.swing.JFrame {
             }
         });
 
+        loginButton.setFont(new java.awt.Font("Calibri", 0, 36)); // NOI18N
         loginButton.setText("Login");
         loginButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -351,26 +501,26 @@ public class Email_Notification extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(108, 108, 108)
+                .addGap(537, 537, 537)
+                .addComponent(signUpButton, javax.swing.GroupLayout.PREFERRED_SIZE, 248, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 496, Short.MAX_VALUE)
+                .addComponent(loginButton, javax.swing.GroupLayout.PREFERRED_SIZE, 233, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(416, 416, 416))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel1)
-                .addContainerGap(111, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(65, 65, 65)
-                .addComponent(signUpButton)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(loginButton)
-                .addGap(70, 70, 70))
+                .addGap(606, 606, 606))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(24, 24, 24)
+                .addGap(295, 295, 295)
                 .addComponent(jLabel1)
-                .addGap(104, 104, 104)
+                .addGap(273, 273, 273)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(signUpButton)
                     .addComponent(loginButton))
-                .addContainerGap(131, Short.MAX_VALUE))
+                .addContainerGap(359, Short.MAX_VALUE))
         );
 
         pack();
@@ -433,11 +583,9 @@ public class Email_Notification extends javax.swing.JFrame {
                 loginFrame.dispose();
                 if(currentUser.equals("admin")){
                     adminDashboard.setVisible(true);
-                    JOptionPane.showMessageDialog(null, "Welcome admin! We've been waiting for you :)");
                 }
                 else{
                     dashboard.setVisible(true);
-                    JOptionPane.showMessageDialog(null, "Logged in!");
                 }
             }
             else{
@@ -461,7 +609,7 @@ public class Email_Notification extends javax.swing.JFrame {
         properties.put("mail.smtp.host", "smtp.gmail.com");
         properties.put("mail.smtp.port", "587");
         final String adminEmail = "<admin-email-address-goes-here>";
-        final String password = "<admin-password-goes-here>";
+        final String password = "<admin-password-for-email-goes-here>";
         Session session = Session.getInstance(properties, new Authenticator(){
             @Override
             protected PasswordAuthentication getPasswordAuthentication(){
@@ -501,12 +649,55 @@ public class Email_Notification extends javax.swing.JFrame {
                     }
                 }
             }
-            
+            JOptionPane.showMessageDialog(null, "Emails sent successfully.");
         }
         catch(Exception e){
             JOptionPane.showMessageDialog(null, "The following error occurred: "+ e.getMessage());
         }
     }//GEN-LAST:event_sendEmailsButtonActionPerformed
+
+    private void signUpBackButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_signUpBackButtonActionPerformed
+        signUpFrame.dispose();
+        this.setVisible(true);
+    }//GEN-LAST:event_signUpBackButtonActionPerformed
+
+    private void loginBackButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginBackButtonActionPerformed
+        loginFrame.dispose();
+        this.setVisible(true);
+    }//GEN-LAST:event_loginBackButtonActionPerformed
+
+    private void dashboardBackButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dashboardBackButtonActionPerformed
+        dashboard.dispose();
+        loginFrame.setVisible(true);
+    }//GEN-LAST:event_dashboardBackButtonActionPerformed
+
+    private void adminDashboardBackButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_adminDashboardBackButtonActionPerformed
+        adminDashboard.dispose();
+        loginFrame.setVisible(true);
+    }//GEN-LAST:event_adminDashboardBackButtonActionPerformed
+
+    private void signUpFrameWindowActivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_signUpFrameWindowActivated
+        userIDTextField1.setText("");
+        emailTextField.setText("");
+        passwordField1.setText("");
+    }//GEN-LAST:event_signUpFrameWindowActivated
+
+    private void loginFrameWindowActivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_loginFrameWindowActivated
+        userIDTextField2.setText("");
+        passwordField2.setText("");
+    }//GEN-LAST:event_loginFrameWindowActivated
+
+    private void adminDashboardWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_adminDashboardWindowOpened
+        
+    }//GEN-LAST:event_adminDashboardWindowOpened
+
+    private void adminDashboardWindowClosed(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_adminDashboardWindowClosed
+        subjectTextField.setText("");
+        bodyTextArea.setText("");
+        allUsersRadioButton.setSelected(false);
+        filtersRadioButton.setSelected(false);
+        countryListBox.clearSelection();
+    }//GEN-LAST:event_adminDashboardWindowClosed
 
     /**
      * @param args the command line arguments
@@ -545,6 +736,7 @@ public class Email_Notification extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JFrame adminDashboard;
+    private javax.swing.JButton adminDashboardBackButton;
     private javax.swing.JRadioButton allUsersRadioButton;
     private javax.swing.JTextArea bodyTextArea;
     private javax.swing.ButtonGroup buttonGroup1;
@@ -552,12 +744,15 @@ public class Email_Notification extends javax.swing.JFrame {
     private javax.swing.JList<String> countryListBox;
     private javax.swing.JButton createAccountButton;
     private javax.swing.JFrame dashboard;
+    private javax.swing.JButton dashboardBackButton;
     private javax.swing.JTextField emailTextField;
     private javax.swing.JButton enterButton;
     private javax.swing.JRadioButton filtersRadioButton;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -570,11 +765,13 @@ public class Email_Notification extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTextArea jTextArea1;
+    private javax.swing.JButton loginBackButton;
     private javax.swing.JButton loginButton;
     private javax.swing.JFrame loginFrame;
     private javax.swing.JPasswordField passwordField1;
     private javax.swing.JPasswordField passwordField2;
     private javax.swing.JButton sendEmailsButton;
+    private javax.swing.JButton signUpBackButton;
     private javax.swing.JButton signUpButton;
     private javax.swing.JFrame signUpFrame;
     private javax.swing.JTextField subjectTextField;
