@@ -9,6 +9,7 @@ import javax.mail.Session;
 import javax.mail.Transport;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
+import javax.swing.JPasswordField;
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -138,10 +139,6 @@ public class Email_Notification extends javax.swing.JFrame {
         signUpFrameLayout.setHorizontalGroup(
             signUpFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(signUpFrameLayout.createSequentialGroup()
-                .addContainerGap(839, Short.MAX_VALUE)
-                .addComponent(createAccountButton)
-                .addGap(834, 834, 834))
-            .addGroup(signUpFrameLayout.createSequentialGroup()
                 .addGroup(signUpFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(signUpFrameLayout.createSequentialGroup()
                         .addContainerGap()
@@ -160,8 +157,11 @@ public class Email_Notification extends javax.swing.JFrame {
                             .addComponent(passwordField1, javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(emailTextField, javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(userIDTextField1, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(countryBox, 0, 861, Short.MAX_VALUE))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(countryBox, 0, 861, Short.MAX_VALUE)))
+                    .addGroup(signUpFrameLayout.createSequentialGroup()
+                        .addGap(832, 832, 832)
+                        .addComponent(createAccountButton)))
+                .addContainerGap(369, Short.MAX_VALUE))
         );
         signUpFrameLayout.setVerticalGroup(
             signUpFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -189,15 +189,14 @@ public class Email_Notification extends javax.swing.JFrame {
                 .addGroup(signUpFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
                     .addComponent(countryBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(149, 149, 149)
+                .addGap(135, 135, 135)
                 .addComponent(createAccountButton)
-                .addContainerGap(176, Short.MAX_VALUE))
+                .addContainerGap(190, Short.MAX_VALUE))
         );
 
         loginFrame.setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         loginFrame.setTitle("Login");
         loginFrame.setMinimumSize(new java.awt.Dimension(1930, 1040));
-        loginFrame.setPreferredSize(new java.awt.Dimension(1930, 1040));
         loginFrame.addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowActivated(java.awt.event.WindowEvent evt) {
                 loginFrameWindowActivated(evt);
@@ -287,7 +286,6 @@ public class Email_Notification extends javax.swing.JFrame {
         dashboard.setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         dashboard.setTitle("Dashboard");
         dashboard.setMinimumSize(new java.awt.Dimension(1930, 1040));
-        dashboard.setPreferredSize(new java.awt.Dimension(1930, 1040));
 
         jLabel8.setFont(new java.awt.Font("Calibri", 0, 48)); // NOI18N
         jLabel8.setText("Dashboard");
@@ -431,9 +429,9 @@ public class Email_Notification extends javax.swing.JFrame {
                     .addComponent(allUsersRadioButton))
                 .addGap(77, 77, 77)
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(253, 253, 253)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 293, Short.MAX_VALUE)
                 .addComponent(sendEmailsButton, javax.swing.GroupLayout.PREFERRED_SIZE, 295, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 235, Short.MAX_VALUE))
+                .addGap(195, 195, 195))
         );
         adminDashboardLayout.setVerticalGroup(
             adminDashboardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -461,7 +459,7 @@ public class Email_Notification extends javax.swing.JFrame {
                                 .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(48, 48, 48))
                             .addGroup(adminDashboardLayout.createSequentialGroup()
-                                .addGap(158, 158, 158)
+                                .addGap(174, 174, 174)
                                 .addComponent(sendEmailsButton, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, adminDashboardLayout.createSequentialGroup()
@@ -475,7 +473,6 @@ public class Email_Notification extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Email Notification Testing Portal");
         setMinimumSize(new java.awt.Dimension(1930, 1040));
-        setPreferredSize(new java.awt.Dimension(1930, 1040));
 
         jLabel1.setFont(new java.awt.Font("Calibri", 0, 48)); // NOI18N
         jLabel1.setText("Email Notification Testing Portal");
@@ -608,8 +605,10 @@ public class Email_Notification extends javax.swing.JFrame {
         properties.put("mail.smtp.starttls.enable", "true");
         properties.put("mail.smtp.host", "smtp.gmail.com");
         properties.put("mail.smtp.port", "587");
-        final String adminEmail = "<admin-email-address-goes-here>";
-        final String password = "<admin-password-for-email-goes-here>";
+        final String adminEmail = JOptionPane.showInputDialog(null, "Enter admin email address.");
+        JPasswordField emailPasswordField = new JPasswordField();
+        JOptionPane.showConfirmDialog(null, emailPasswordField, "Enter admin email password.",JOptionPane.OK_CANCEL_OPTION);
+        final String password = new String(emailPasswordField.getPassword());
         Session session = Session.getInstance(properties, new Authenticator(){
             @Override
             protected PasswordAuthentication getPasswordAuthentication(){
